@@ -21,7 +21,7 @@ public class test : MonoBehaviour
         try{     
             score = uint.Parse(scoreText.text); //Met à jour le score dans le script
             for(int i=0; i<myPrefab.Length; i++){
-                if(other.name.Substring(other.name.IndexOf("_"), other.name.IndexOf("(")-other.name.IndexOf("_")) == "_bis"){   //si c'est un "bis"
+                if(other.name.Substring(other.name.IndexOf("_")/*, other.name.IndexOf("(")-other.name.IndexOf("_")*/) == "_bis"){   //si c'est un "bis"
                     if(other.name.Substring(0, other.name.IndexOf("_")) == myPrefab[i].name){ //SI un des prefabs porte le nom de celui qui vient d'être amené sans le _bis
                         score++;
                         scoreText.text = score.ToString();
