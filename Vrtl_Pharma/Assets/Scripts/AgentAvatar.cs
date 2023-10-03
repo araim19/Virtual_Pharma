@@ -10,6 +10,7 @@ public class AgentAvatar : MonoBehaviour
     void Start()
     {
         agent.SetDestination(destination);
+        //if(DisturbanceAvatarsController.flags[1])
     }
 
 }
