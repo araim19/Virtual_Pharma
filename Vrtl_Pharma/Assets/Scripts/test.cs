@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class test : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public TextMeshProUGUI scoreText;
+    private uint score;
+
+    private void Start(){
+        score = 0;
+        scoreText.text = "coucou";
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void OnTriggerEnter(Collider other){
+        score++;
+        scoreText.text = score.ToString();
+        gameObject.SetActive(false);
+    }
+
+    private void OnTriggerExit(Collider other){
+        gameObject.SetActive(true);
     }
 }
