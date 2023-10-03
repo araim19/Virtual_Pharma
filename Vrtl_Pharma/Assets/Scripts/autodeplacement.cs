@@ -11,7 +11,7 @@ public class autodeplacement : MonoBehaviour
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
-        mySpeed = 10.0f;
+        mySpeed = 1.0f;
     }
 
     // Update is called once per frame
