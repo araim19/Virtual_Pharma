@@ -47,7 +47,7 @@ public class DisturbanceAvatarsController : MonoBehaviour
         {
             caninstante = false;
             CharacterList[i] = Instantiate(GameObjectMain, new Vector3(0, 0, 0), Quaternion.identity, TransformSource.transform);
-            Instantiate(Avatars[UnityEngine.Random.Range(0, Avatars.Length)], new Vector3(0, 0, 0), Quaternion.identity, CharacterList[i].transform);
+            Instantiate(Avatars[UnityEngine.Random.Range(0, Avatars.Length)], new Vector3(0, 1, 0), Quaternion.identity, CharacterList[i].transform);
             StartCoroutine(Coroutinewait());
             cpt++;
             incrementonly++;

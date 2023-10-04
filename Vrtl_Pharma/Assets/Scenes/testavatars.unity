@@ -156,6 +156,7 @@ MonoBehaviour:
   - {fileID: 5051663691148145344, guid: 2c9e798170054ac45b91b56c2ead6895, type: 3}
   - {fileID: 2648887514218795410, guid: e4bcc5911d13f554699ed88850f44945, type: 3}
   - {fileID: 1757186400505004799, guid: 3f291e19c6321044394a0b0412b33b0e, type: 3}
+  - {fileID: 1757186400505004799, guid: ed66ef4e44b86464cbf7f148e0031664, type: 3}
   CharacterList:
   - {fileID: 0}
   - {fileID: 0}
@@ -288,7 +289,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216273559}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -8.8, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -431,7 +432,6 @@ GameObject:
   - component: {fileID: 1491921718}
   - component: {fileID: 1491921719}
   - component: {fileID: 1491921720}
-  - component: {fileID: 1491921721}
   m_Layer: 0
   m_Name: CharacterWithProblem
   m_TagString: Untagged
@@ -464,10 +464,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 90
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -485,27 +485,11 @@ CapsuleCollider:
   m_GameObject: {fileID: 1491921717}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 2.487861
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1491921721
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491921717}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Center: {x: 0, y: 1.2607147, z: 0}
 --- !u!1 &1662209066
 GameObject:
   m_ObjectHideFlags: 0
