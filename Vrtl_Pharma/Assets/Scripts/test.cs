@@ -23,6 +23,8 @@ public class test : MonoBehaviour
             for(int i=0; i<myPrefab.Length; i++){
                 if(other.name.Substring(other.name.IndexOf("_")/*, other.name.IndexOf("(")-other.name.IndexOf("_")*/) == "_bis"){   //si c'est un "bis"
                     if(other.name.Substring(0, other.name.IndexOf("_")) == myPrefab[i].name){ //SI un des prefabs porte le nom de celui qui vient d'être amené sans le _bis
+                        Debug.Log("objet bis:" + other.name);
+                        Debug.Log("colision avec:"+gameObject.name);
                         score++;
                         scoreText.text = score.ToString();
                         Destroy(other.gameObject);
@@ -32,7 +34,8 @@ public class test : MonoBehaviour
             }
         }
         catch{
-            Debug.Log("Objet non _bis");
+            //Debug.Log("------------------");
+            //Debug.Log("colision avec:"+gameObject.name);
         }
     }
 }
