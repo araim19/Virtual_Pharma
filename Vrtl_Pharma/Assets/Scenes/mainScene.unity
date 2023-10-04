@@ -10954,6 +10954,24 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!1 &790367588 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2777663795362703604, guid: dd61687c71d374c46b949fcd34502149, type: 3}
+  m_PrefabInstance: {fileID: 1400903400}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &790367589
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790367588}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5607765, y: 2.622142, z: 0.3000004}
+  m_Center: {x: 0, y: 1.3111496, z: 0}
 --- !u!4 &795442937 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5550228814641641027, guid: a1e14e0cb92779444931aeca58741ecb, type: 3}
@@ -21020,6 +21038,32 @@ MonoBehaviour:
   - {fileID: 474832733102997328, guid: 95e47adc4c85c464e959eb392d968cfb, type: 3}
   - {fileID: 3874830098109522516, guid: 1b2a792f28747b944abd3c05a2dc3c69, type: 3}
   - {fileID: 5408122778900521347, guid: 408a87ce415ee5146997f9fc635f8abc, type: 3}
+--- !u!65 &1400903406
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400903402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5607765, y: 2.622142, z: 0.3000004}
+  m_Center: {x: 0, y: 1.3111496, z: 0}
+--- !u!65 &1400903407
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400903403}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5607765, y: 2.622142, z: 0.3000004}
+  m_Center: {x: 0, y: 1.3111496, z: 0}
 --- !u!1001 &1408420520
 PrefabInstance:
   m_ObjectHideFlags: 0
