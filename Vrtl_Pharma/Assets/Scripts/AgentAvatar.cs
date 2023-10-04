@@ -5,12 +5,12 @@ using UnityEngine.AI;
 
 public class AgentAvatar : MonoBehaviour
 {
+
+    DisturbanceAvatarsController DAC;
+
     public NavMeshAgent agent;
-    public Vector3 destination;
-    void Start()
-    {
-        agent.SetDestination(destination);
-        //if(DisturbanceAvatarsController.flags[1])
-    }
+    
+
+   
 
 }
