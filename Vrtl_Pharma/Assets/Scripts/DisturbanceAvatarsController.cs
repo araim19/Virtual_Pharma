@@ -18,7 +18,7 @@ public class DisturbanceAvatarsController : MonoBehaviour
     public GameObject GameObjectMain;
 
 
-    private int Disturbance_Level = 3; //1 à 3
+    private int Disturbance_Level = 1; //1 à 3
     public static int NB_Avatars;
 
 
@@ -46,9 +46,9 @@ public class DisturbanceAvatarsController : MonoBehaviour
         if (caninstante)        
         {
             caninstante = false;
-            CharacterList[i] = Instantiate(GameObjectMain, new Vector3(0, 1, 0), Quaternion.identity, TransformSource.transform);
-            Instantiate(Avatars[UnityEngine.Random.Range(0, Avatars.Length)], new Vector3(i, 1, 0), Quaternion.identity, CharacterList[i].transform);
-            StartCoroutine(Coroutinewait(0));
+            CharacterList[i] = Instantiate(GameObjectMain, new Vector3(0, 0, 0), Quaternion.identity, TransformSource.transform);
+            Instantiate(Avatars[UnityEngine.Random.Range(0, Avatars.Length)], new Vector3(0, 0, 0), Quaternion.identity, CharacterList[i].transform);
+            StartCoroutine(Coroutinewait());
             cpt++;
             incrementonly++;
             UpdateAllDest();
@@ -66,7 +66,7 @@ public class DisturbanceAvatarsController : MonoBehaviour
     }
 
 
-    IEnumerator Coroutinewait(int index)
+    IEnumerator Coroutinewait()
     {
         yield return new WaitForSeconds(1);
         if (incrementonly != NB_Avatars)
@@ -92,7 +92,7 @@ public class DisturbanceAvatarsController : MonoBehaviour
 
     public void UpdateAgentDest(int agentindex, int destinationindex)
     {
-        CharacterList[agentindex].GetComponentInChildren<NavMeshAgent>().SetDestination(destinations[destinationindex]);
+        CharacterList[agentindex].GetComponent<NavMeshAgent>().SetDestination(destinations[destinationindex]); //GetComponentInChildren<NavMeshAgent>().
     }
 
     public void RemoveElement<T>(ref T[] arr, int index)
