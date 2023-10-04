@@ -11,6 +11,8 @@ public class DisturbanceAvatarsController : MonoBehaviour
 
     [SerializeField] public GameObject[] CharacterList; //Liste des avatars qui viendront dans le magasin
 
+    [SerializeField] public GameObject dialogue;
+
     private int i = 0;
     private bool caninstante = true;
 
@@ -18,7 +20,7 @@ public class DisturbanceAvatarsController : MonoBehaviour
     public GameObject GameObjectMain;
 
 
-    private int Disturbance_Level = 1; //1 à 3
+    private int Disturbance_Level = 3; //1 à 3
     public static int NB_Avatars;
 
 
@@ -48,6 +50,7 @@ public class DisturbanceAvatarsController : MonoBehaviour
             caninstante = false;
             CharacterList[i] = Instantiate(GameObjectMain, new Vector3(0, 0, 0), Quaternion.identity, TransformSource.transform);
             Instantiate(Avatars[UnityEngine.Random.Range(0, Avatars.Length)], new Vector3(0, 1, 0), Quaternion.identity, CharacterList[i].transform);
+            Instantiate(dialogue, new Vector3(-1f, 2, 0.5f), new Quaternion(0f,180f,0f,0f), CharacterList[i].transform);
             StartCoroutine(Coroutinewait());
             cpt++;
             incrementonly++;
@@ -62,13 +65,16 @@ public class DisturbanceAvatarsController : MonoBehaviour
             cpt--;
             RemoveElement(ref CharacterList, 0);
             UpdateAllDest();
-        }    
+        }
+
+        //test sur la destination {Instantiate(dialogue, new Vector3(-1f, 2, 0.5f), new Quaternion(0f,180f,0f,0f), CharacterList[0].transform);}
+
     }
 
 
     IEnumerator Coroutinewait()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         if (incrementonly != NB_Avatars)
         {
             caninstante = true;
