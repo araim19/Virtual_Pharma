@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using System.IO;
+using Palmmedia.ReportGenerator.Core.Parser.Analysis;
 public class LoadDialoge : MonoBehaviour
 {
     private AudioSource _source;
@@ -27,10 +28,11 @@ public class LoadDialoge : MonoBehaviour
         _dialogue = GameObject.Find("DialogUI").GetComponent<TextMeshProUGUI>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(_delayPassed){
+            if(_numLigne == _lines.Length-1)
+                _dialogue.color = Color.green;
             Debug.Log("lines:"+_lines.Length);
             Debug.Log("numLigne:"+_numLigne);
             _dialogue.text = _lines[_numLigne];
@@ -45,13 +47,5 @@ public class LoadDialoge : MonoBehaviour
             _numLigne++;
             _delayPassed = true;
         }
-        else{
-
-            CloseDialog();
-        }
-    }
-
-    void CloseDialog(){
-        canvasDialog.SetActive(false);
     }
 }
