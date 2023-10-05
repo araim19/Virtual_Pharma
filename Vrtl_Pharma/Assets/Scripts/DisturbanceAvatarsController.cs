@@ -22,6 +22,7 @@ public class DisturbanceAvatarsController : MonoBehaviour
     private GameObject Temp;
 
     private bool autorize = false; //Avoid error with null array
+    private bool lookatauto = true;
 
 
     private int Disturbance_Level = 3; //1 à 3
@@ -66,6 +67,7 @@ public class DisturbanceAvatarsController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D)) //for debug
         {
+            Destroy(Temp);
             print("destruction");
             UpdateAgentDest(0, 10);
             cpt--;
@@ -75,10 +77,10 @@ public class DisturbanceAvatarsController : MonoBehaviour
 
         if (autorize)
         {
-            //CharacterList[0].transform.LookAt(Player);
+            //StartCoroutine(CoroutineLookAt());
             if (Vector3.Distance(CharacterList[0].transform.position, destinations[0].position) < 1 && CharacterList[0].GetComponentsInChildren<Transform>().Length<3)
             {
-                Temp = Instantiate(dialogue, new Vector3(-1f, 2, 0.5f), new Quaternion(0f, 180f, 0f, 0f), CharacterList[0].transform);
+                Temp = Instantiate(dialogue, new Vector3(-1f, 2, 0.5f), new Quaternion(0f, 0f, 0f, 0f), CharacterList[0].transform);
                 Temp.transform.localPosition = new Vector3(-1f, 2, 0.5f);
             }
         }
@@ -94,6 +96,14 @@ public class DisturbanceAvatarsController : MonoBehaviour
             caninstante = true;
         }
          
+    }
+
+    IEnumerator CoroutineLookAt()
+    {
+        lookatauto = false;
+        yield return new WaitForSeconds(4);
+        CharacterList[0].transform.LookAt(Player.forward);
+        lookatauto = true;
     }
 
 
@@ -128,6 +138,7 @@ public class DisturbanceAvatarsController : MonoBehaviour
 
     public void Completed()
     {
+        Destroy(Temp);
         UpdateAgentDest(0, 10);
         cpt--;
         RemoveElement(ref CharacterList, 0);
