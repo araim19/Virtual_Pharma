@@ -40972,7 +40972,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1151314005287832519}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: StartBT
+        m_MethodName: MenuBT
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
