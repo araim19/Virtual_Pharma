@@ -19,13 +19,19 @@ public class DisturbanceAvatarsController : MonoBehaviour
     public GameObject TransformSource;
     public GameObject GameObjectMain;
 
+    private GameObject Temp;
+
+    private bool autorize = false; //Avoid error with null array
+
 
     private int Disturbance_Level = 3; //1 à 3
     public static int NB_Avatars;
 
+    public Transform Player;
 
+    public Transform[] destinations;
+    private Vector3 target;
 
-    public Vector3[] destinations;
     private int cpt = 0;
     private int incrementonly = 0;
 
@@ -50,7 +56,7 @@ public class DisturbanceAvatarsController : MonoBehaviour
             caninstante = false;
             CharacterList[i] = Instantiate(GameObjectMain, new Vector3(0, 0, 0), Quaternion.identity, TransformSource.transform);
             Instantiate(Avatars[UnityEngine.Random.Range(0, Avatars.Length)], new Vector3(0, 1, 0), Quaternion.identity, CharacterList[i].transform);
-            Instantiate(dialogue, new Vector3(-1f, 2, 0.5f), new Quaternion(0f,180f,0f,0f), CharacterList[i].transform);
+            //Instantiate(dialogue, new Vector3(-1f, 2, 0.5f), new Quaternion(0f,180f,0f,0f), CharacterList[i].transform);
             StartCoroutine(Coroutinewait());
             cpt++;
             incrementonly++;
@@ -67,13 +73,21 @@ public class DisturbanceAvatarsController : MonoBehaviour
             UpdateAllDest();
         }
 
-        //test sur la destination {Instantiate(dialogue, new Vector3(-1f, 2, 0.5f), new Quaternion(0f,180f,0f,0f), CharacterList[0].transform);}
-
+        if (autorize)
+        {
+            //CharacterList[0].transform.LookAt(Player);
+            if (Vector3.Distance(CharacterList[0].transform.position, destinations[0].position) < 1 && CharacterList[0].GetComponentsInChildren<Transform>().Length<3)
+            {
+                Temp = Instantiate(dialogue, new Vector3(-1f, 2, 0.5f), new Quaternion(0f, 180f, 0f, 0f), CharacterList[0].transform);
+                Temp.transform.localPosition = new Vector3(-1f, 2, 0.5f);
+            }
+        }
     }
 
 
     IEnumerator Coroutinewait()
     {
+        autorize = true;
         yield return new WaitForSeconds(0.5f);
         if (incrementonly != NB_Avatars)
         {
@@ -98,7 +112,8 @@ public class DisturbanceAvatarsController : MonoBehaviour
 
     public void UpdateAgentDest(int agentindex, int destinationindex)
     {
-        CharacterList[agentindex].GetComponent<NavMeshAgent>().SetDestination(destinations[destinationindex]); //GetComponentInChildren<NavMeshAgent>().
+        target = destinations[destinationindex].position;
+        CharacterList[agentindex].GetComponent<NavMeshAgent>().SetDestination(target); //GetComponentInChildren<NavMeshAgent>().
     }
 
     public void RemoveElement<T>(ref T[] arr, int index)
