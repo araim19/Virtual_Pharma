@@ -34654,8 +34654,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba842d03eb278154e845113bb613a617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialAudio: {fileID: 1972340008}
-  scenarioScriptPATH: Assets/Scenario/scenario1.txt
+  audioClips:
+  - {fileID: 8300000, guid: e8440e262d97f894780c50d8255b8e5b, type: 3}
+  - {fileID: 8300000, guid: 181c237a0327bc047bad0c5fb98942ac, type: 3}
+  - {fileID: 8300000, guid: 75ae5e75d245cfb4ab3c3da4dd45b1e2, type: 3}
+  - {fileID: 8300000, guid: 312510089396fed499cc2aead1ec808e, type: 3}
+  scenarioScriptsPATH:
+  - Assets/Scenario/scenario1.txt
+  - Assets/Scenario/scenario2.txt
+  - Assets/Scenario/scenario3.txt
+  - Assets/Scenario/scenario4.txt
   canvasDialog: {fileID: 1451061266}
 --- !u!82 &1972340008
 AudioSource:
@@ -34667,7 +34675,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c2f2941dc1534234c867dc734dde3fd6, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -40290,7 +40298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6578049124916137031, guid: 37f0d27d5a237d04988b5f2242b809b5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.355
+      value: 1.69
       objectReference: {fileID: 0}
     - target: {fileID: 6578049124916137031, guid: 37f0d27d5a237d04988b5f2242b809b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -40304,7 +40312,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8528388731947257638, guid: 37f0d27d5a237d04988b5f2242b809b5, type: 3}
+    - {fileID: 356957820865220523, guid: 37f0d27d5a237d04988b5f2242b809b5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 37f0d27d5a237d04988b5f2242b809b5, type: 3}
 --- !u!4 &5737239950035023176
 Transform:

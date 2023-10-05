@@ -6,8 +6,9 @@ using System;
 using System.IO;
 public class LoadDialoge : MonoBehaviour
 {
-    public AudioSource _dialAudio;
-    public String scenarioScriptPATH;
+    private AudioSource _source;
+    public AudioClip[] audioClips;
+    public String[] scenarioScriptsPATH;
     public GameObject canvasDialog;
     private int _numLigne;
     private TextMeshProUGUI _dialogue;
@@ -15,12 +16,15 @@ public class LoadDialoge : MonoBehaviour
     private bool _delayPassed = true;
     void Start()
     {
-        _dialAudio.Play();
+        int idScenario = UnityEngine.Random.Range(0, audioClips.Length);
+        _source = GetComponent<AudioSource>();
+        _source.clip = audioClips[idScenario];
+        _source.Play();
+
         _numLigne = 0;
-        _lines = File.ReadAllLines(scenarioScriptPATH);
+        _lines = File.ReadAllLines(scenarioScriptsPATH[idScenario]);
         canvasDialog.SetActive(true);
         _dialogue = GameObject.Find("DialogUI").GetComponent<TextMeshProUGUI>();
-        _dialogue.text = "coucou";   
     }
 
     // Update is called once per frame
