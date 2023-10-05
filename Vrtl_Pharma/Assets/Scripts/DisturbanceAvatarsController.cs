@@ -64,7 +64,7 @@ public class DisturbanceAvatarsController : MonoBehaviour
             i++;
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D)) //for debug
         {
             print("destruction");
             UpdateAgentDest(0, 10);
@@ -88,7 +88,7 @@ public class DisturbanceAvatarsController : MonoBehaviour
     IEnumerator Coroutinewait()
     {
         autorize = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(3f);
         if (incrementonly != NB_Avatars)
         {
             caninstante = true;
@@ -123,6 +123,15 @@ public class DisturbanceAvatarsController : MonoBehaviour
             arr[i] = arr[i + 1];
         }
         Array.Resize(ref arr, arr.Length - 1);
+    }
+
+
+    public void Completed()
+    {
+        UpdateAgentDest(0, 10);
+        cpt--;
+        RemoveElement(ref CharacterList, 0);
+        UpdateAllDest();
     }
 
 }

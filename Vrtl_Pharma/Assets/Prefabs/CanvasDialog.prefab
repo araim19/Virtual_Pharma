@@ -288,8 +288,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba842d03eb278154e845113bb613a617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialAudio: {fileID: -8528388731947257638}
-  scenarioScriptPATH: Assets/Scenario/scenario1.txt
+  audioClips:
+  - {fileID: 8300000, guid: e8440e262d97f894780c50d8255b8e5b, type: 3}
+  - {fileID: 8300000, guid: 181c237a0327bc047bad0c5fb98942ac, type: 3}
+  - {fileID: 8300000, guid: 75ae5e75d245cfb4ab3c3da4dd45b1e2, type: 3}
+  - {fileID: 8300000, guid: 312510089396fed499cc2aead1ec808e, type: 3}
+  scenarioScriptsPATH:
+  - Assets/Scenario/scenario1.txt
+  - Assets/Scenario/scenario2.txt
+  - Assets/Scenario/scenario3.txt
+  - Assets/Scenario/scenario4.txt
   canvasDialog: {fileID: 5668029119682529197}
 --- !u!1 &8621961799881367209
 GameObject:
