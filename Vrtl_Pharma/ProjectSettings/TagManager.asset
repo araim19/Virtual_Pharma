@@ -6,6 +6,8 @@ TagManager:
   tags:
   - CartonInfl
   - CartonDoul
+  - Not_Talking
+  - Talking
   layers:
   - Default
   - TransparentFX

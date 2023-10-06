@@ -7,7 +7,8 @@ using UnityEngine.AI;
 public class DisturbanceAvatarsController : MonoBehaviour
 {
 
-    [SerializeField] private GameObject[] Avatars; //Liste des avatars à notre disposition
+    [SerializeField] private GameObject[] AvatarsF; //Liste des avatars à notre disposition
+    [SerializeField] private GameObject[] AvatarsM; //Liste des avatars à notre disposition
 
     [SerializeField] public GameObject[] CharacterList; //Liste des avatars qui viendront dans le magasin
 
@@ -56,7 +57,19 @@ public class DisturbanceAvatarsController : MonoBehaviour
         {
             caninstante = false;
             CharacterList[i] = Instantiate(GameObjectMain, new Vector3(0, 0, 0), Quaternion.identity, TransformSource.transform);
-            Instantiate(Avatars[UnityEngine.Random.Range(0, Avatars.Length)], new Vector3(0, 1, 0), Quaternion.identity, CharacterList[i].transform);
+            int random = UnityEngine.Random.Range(0, 2);//determine avatar F ou M
+            if(random == 0)
+            {
+                var michel = Instantiate(AvatarsF[UnityEngine.Random.Range(0, AvatarsF.Length)], new Vector3(0, -0.1f, 0), Quaternion.identity, CharacterList[i].transform);
+                michel.tag = "F";
+            }
+            else if(random == 1)
+            {
+                var michel = Instantiate(AvatarsM[UnityEngine.Random.Range(0, AvatarsM.Length)], new Vector3(0, -0.1f, 0), Quaternion.identity, CharacterList[i].transform);
+                michel.tag = "M";
+            }
+            
+            CharacterList[i].tag = "Not_Talking";
             //Instantiate(dialogue, new Vector3(-1f, 2, 0.5f), new Quaternion(0f,180f,0f,0f), CharacterList[i].transform);
             StartCoroutine(Coroutinewait());
             cpt++;
@@ -78,8 +91,9 @@ public class DisturbanceAvatarsController : MonoBehaviour
         if (autorize)
         {
             //StartCoroutine(CoroutineLookAt());
-            if (Vector3.Distance(CharacterList[0].transform.position, destinations[0].position) < 1 && CharacterList[0].GetComponentsInChildren<Transform>().Length<3)
+            if (Vector3.Distance(CharacterList[0].transform.position, destinations[0].position) < 1 && CharacterList[0].tag=="Not_Talking")
             {
+                CharacterList[0].tag = "Talking";
                 Temp = Instantiate(dialogue, new Vector3(-1f, 2, 0.5f), new Quaternion(0f, 0f, 0f, 0f), CharacterList[0].transform);
                 Temp.transform.localPosition = new Vector3(-1f, 2, 0.5f);
             }

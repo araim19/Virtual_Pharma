@@ -109,7 +109,7 @@ NavMeshSettings:
     agentRadius: 0.5
     agentHeight: 2
     agentSlope: 32.3
-    agentClimb: 0.3
+    agentClimb: 0.17
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -183,11 +183,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6226271cd798c443adf6379dfd510bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Avatars:
-  - {fileID: 5051663691148145344, guid: 2c9e798170054ac45b91b56c2ead6895, type: 3}
-  - {fileID: 2648887514218795410, guid: e4bcc5911d13f554699ed88850f44945, type: 3}
-  - {fileID: 1757186400505004799, guid: 3f291e19c6321044394a0b0412b33b0e, type: 3}
-  - {fileID: 1757186400505004799, guid: ed66ef4e44b86464cbf7f148e0031664, type: 3}
+  AvatarsF:
+  - {fileID: 4456674805354066065, guid: 49110faa0a3264f45901aab6d034546e, type: 3}
+  AvatarsM:
+  - {fileID: 4456674805354066065, guid: 49110faa0a3264f45901aab6d034546e, type: 3}
   CharacterList:
   - {fileID: 0}
   - {fileID: 0}
@@ -284,7 +283,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e911acf4946bc914488f32b8ecb2e9da, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -463,6 +462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 983775444}
   - component: {fileID: 983775443}
+  - component: {fileID: 983775445}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -547,6 +547,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &983775445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983775442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1077793374
 GameObject:
   m_ObjectHideFlags: 0
