@@ -184,9 +184,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AvatarsF:
-  - {fileID: 4456674805354066065, guid: 49110faa0a3264f45901aab6d034546e, type: 3}
+  - {fileID: 1757186400505004799, guid: ed66ef4e44b86464cbf7f148e0031664, type: 3}
+  - {fileID: 2648887514218795410, guid: e4bcc5911d13f554699ed88850f44945, type: 3}
   AvatarsM:
-  - {fileID: 4456674805354066065, guid: 49110faa0a3264f45901aab6d034546e, type: 3}
+  - {fileID: 1757186400505004799, guid: 3f291e19c6321044394a0b0412b33b0e, type: 3}
+  - {fileID: 5051663691148145344, guid: 2c9e798170054ac45b91b56c2ead6895, type: 3}
   CharacterList:
   - {fileID: 0}
   - {fileID: 0}
@@ -559,14 +561,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Version: 1
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1077793374
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ TagManager:
   - CartonDoul
   - Not_Talking
   - Talking
+  - F
+  - M
   layers:
   - Default
   - TransparentFX
