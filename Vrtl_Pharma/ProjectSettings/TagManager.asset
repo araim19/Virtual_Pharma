@@ -10,6 +10,8 @@ TagManager:
   - Talking
   - F
   - M
+  - Idle
+  - Walking
   layers:
   - Default
   - TransparentFX

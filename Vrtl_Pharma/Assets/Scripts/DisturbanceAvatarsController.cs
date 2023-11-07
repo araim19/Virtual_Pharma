@@ -91,13 +91,29 @@ public class DisturbanceAvatarsController : MonoBehaviour
         if (autorize)
         {
             //StartCoroutine(CoroutineLookAt());
-            if (Vector3.Distance(CharacterList[0].transform.position, destinations[0].position) < 1 && CharacterList[0].tag=="Not_Talking")
+            if (Vector3.Distance(CharacterList[0].transform.position, destinations[0].position) < 0.4 && CharacterList[0].tag != "Talking")
             {
                 CharacterList[0].tag = "Talking";
-                Temp = Instantiate(dialogue, new Vector3(-1f, 2, 0.5f), new Quaternion(0f, 0f, 0f, 0f), CharacterList[0].transform);
+                Temp = Instantiate(dialogue, new Vector3(-1f, 2, 0.5f), new Quaternion(0f, 180f, 0f, 0f), CharacterList[0].transform);
                 Temp.transform.localPosition = new Vector3(-1f, 2, 0.5f);
             }
+
+            if (CharacterList.Length > 1)
+                for (int ii = 1; ii < cpt; ii++)
+                {
+                    if (Vector3.Distance(CharacterList[ii].transform.position, destinations[ii].position) < 0.4 && CharacterList[ii].tag != "Walking")
+                    {
+                        CharacterList[ii].tag = "Walking";
+                    }
+                    else
+                    {
+                        CharacterList[ii].tag = "Idle";
+                    }
+                }
+
         }
+
+        
     }
 
 

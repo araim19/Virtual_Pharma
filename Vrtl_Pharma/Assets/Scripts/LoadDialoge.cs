@@ -21,7 +21,9 @@ public class LoadDialoge : MonoBehaviour
     public static String _nomMedoc;
     void Start()
     {
-        if(gameObject.tag.ToString() == "F"){
+        print(gameObject.name);
+        print(gameObject.tag);
+        if (gameObject.tag.ToString() == "F"){
             int idScenario = UnityEngine.Random.Range(0, audioClipsF.Length);
             _source = GetComponent<AudioSource>();
             _source.clip = audioClipsF[idScenario];
