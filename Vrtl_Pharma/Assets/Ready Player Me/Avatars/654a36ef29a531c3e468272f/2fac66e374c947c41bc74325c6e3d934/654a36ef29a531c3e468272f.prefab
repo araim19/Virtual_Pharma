@@ -1199,6 +1199,7 @@ GameObject:
   - component: {fileID: 6044463748876748142}
   - component: {fileID: 1977620315240943584}
   - component: {fileID: 1306576501206681155}
+  - component: {fileID: 2090989053205925275}
   m_Layer: 0
   m_Name: 654a36ef29a531c3e468272f
   m_TagString: Untagged
@@ -1242,7 +1243,7 @@ Animator:
   m_GameObject: {fileID: 3313002370663615604}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 2959e7c83a4719e49be9d20621fa24ca, type: 2}
-  m_Controller: {fileID: 9100000, guid: 59baf2d302c73cc489c5722e307837fb, type: 2}
+  m_Controller: {fileID: 9100000, guid: c929f4a1f947c6541bea6bc3152bad7f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1270,6 +1271,18 @@ MonoBehaviour:
     BodyType: 1
     OutfitGender: 2
     SkinTone: '#b87257'
+--- !u!114 &2090989053205925275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3313002370663615604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fc40755213d5c14eb2dcefb04d3fc28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3454355088505685635
 GameObject:
   m_ObjectHideFlags: 0

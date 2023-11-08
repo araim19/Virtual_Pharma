@@ -26,7 +26,7 @@ public class DisturbanceAvatarsController : MonoBehaviour
     private bool lookatauto = true;
 
 
-    private int Disturbance_Level = 3; //1 à 3
+    private int Disturbance_Level = 2; //1 à 3
     public static int NB_Avatars;
 
     public Transform Player;
@@ -57,6 +57,7 @@ public class DisturbanceAvatarsController : MonoBehaviour
         {
             caninstante = false;
             CharacterList[i] = Instantiate(GameObjectMain, new Vector3(0, 0, 0), Quaternion.identity, TransformSource.transform);
+            CharacterList[i].name += i;
             int random = UnityEngine.Random.Range(0, 2);//determine avatar F ou M
             if(random == 0)
             {
@@ -80,18 +81,14 @@ public class DisturbanceAvatarsController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D)) //for debug
         {
-            Destroy(Temp);
-            print("destruction");
-            UpdateAgentDest(0, 10);
-            cpt--;
-            RemoveElement(ref CharacterList, 0);
-            UpdateAllDest();
+            Completed();
         }
+
 
         if (autorize)
         {
             //StartCoroutine(CoroutineLookAt());
-            if (Vector3.Distance(CharacterList[0].transform.position, destinations[0].position) < 0.4 && CharacterList[0].tag != "Talking")
+            if (Vector3.Distance(CharacterList[0].transform.position, destinations[0].position) < 0.2 && CharacterList[0].tag != "Talking")
             {
                 string temptag = "";
                 foreach (Transform child in CharacterList[0].transform)
@@ -102,25 +99,33 @@ public class DisturbanceAvatarsController : MonoBehaviour
                     }
                     else { temptag = "M"; }
                 }
-                    CharacterList[0].tag = "Talking";
+                print(CharacterList[0].name);
+                CharacterList[0].tag = "Talking";
                 Temp = Instantiate(dialogue, new Vector3(-1f, 2, 0.5f), new Quaternion(0f, 180f, 0f, 0f), CharacterList[0].transform);
                 Temp.tag = temptag;
                 Temp.transform.localPosition = new Vector3(-1f, 2, 0.5f);
             }
 
             if (CharacterList.Length > 1)
+            {
+                
                 for (int ii = 1; ii < cpt; ii++)
                 {
-                    if (Vector3.Distance(CharacterList[ii].transform.position, destinations[ii].position) < 0.4 && CharacterList[ii].tag != "Walking")
+                    if (Vector3.Distance(CharacterList[ii].transform.position, destinations[ii].position) > 0.2 && CharacterList[ii].tag != "Walking")
                     {
                         CharacterList[ii].tag = "Walking";
                     }
-                    else
+                    else if (Vector3.Distance(CharacterList[ii].transform.position, destinations[ii].position) < 0.2 && CharacterList[ii].tag != "Idle")
                     {
                         CharacterList[ii].tag = "Idle";
                     }
+                    /*if (Vector3.Distance(CharacterList[0].transform.position, destinations[0].position) < 0.4)
+                    {
+                        print("debug");
+                        CharacterList[0].tag = "Talking";
+                    }*/
                 }
-
+            }
         }
 
         
@@ -178,6 +183,7 @@ public class DisturbanceAvatarsController : MonoBehaviour
 
     public void Completed()
     {
+        CharacterList[0].tag = "Walking";
         Destroy(Temp);
         UpdateAgentDest(0, 10);
         cpt--;
