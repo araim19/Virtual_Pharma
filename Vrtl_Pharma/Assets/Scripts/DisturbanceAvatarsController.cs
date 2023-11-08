@@ -56,17 +56,17 @@ public class DisturbanceAvatarsController : MonoBehaviour
         if (caninstante)        
         {
             caninstante = false;
-            CharacterList[i] = Instantiate(GameObjectMain, new Vector3(0, 0, 0), Quaternion.identity, TransformSource.transform);
+            CharacterList[i] = Instantiate(GameObjectMain, new Vector3(0, 0, 8), Quaternion.identity, TransformSource.transform);
             CharacterList[i].name += i;
             int random = UnityEngine.Random.Range(0, 2);//determine avatar F ou M
             if(random == 0)
             {
-                var michel = Instantiate(AvatarsF[UnityEngine.Random.Range(0, AvatarsF.Length)], new Vector3(0, -0.1f, 0), Quaternion.identity, CharacterList[i].transform);
+                var michel = Instantiate(AvatarsF[UnityEngine.Random.Range(0, AvatarsF.Length)], new Vector3(0, -0.1f, 8), Quaternion.identity, CharacterList[i].transform);
                 michel.tag = "F";
             }
             else if(random == 1)
             {
-                var michel = Instantiate(AvatarsM[UnityEngine.Random.Range(0, AvatarsM.Length)], new Vector3(0, -0.1f, 0), Quaternion.identity, CharacterList[i].transform);
+                var michel = Instantiate(AvatarsM[UnityEngine.Random.Range(0, AvatarsM.Length)], new Vector3(0, -0.1f, 8), Quaternion.identity, CharacterList[i].transform);
                 michel.tag = "M";
             }
             
