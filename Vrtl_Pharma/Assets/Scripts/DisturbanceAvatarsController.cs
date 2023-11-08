@@ -26,7 +26,7 @@ public class DisturbanceAvatarsController : MonoBehaviour
     private bool lookatauto = true;
 
 
-    private int Disturbance_Level = 2; //1 à 3
+    private int Disturbance_Level = 2; //1 à 3 //PlayerPrefs.GetInt(Niveau);
     public static int NB_Avatars;
 
     public Transform Player;
@@ -46,6 +46,7 @@ public class DisturbanceAvatarsController : MonoBehaviour
         NB_Avatars = UnityEngine.Random.Range(Disturbance_Level + 1, 4 * Disturbance_Level - 2);// 2-2 ; 3-6 ; 4-10
         print(NB_Avatars);
 
+        Disturbance_Level = PlayerPrefs.GetInt("Niveau");
     }
 
     // Update is called once per frame
@@ -101,7 +102,7 @@ public class DisturbanceAvatarsController : MonoBehaviour
                 }
                 print(CharacterList[0].name);
                 CharacterList[0].tag = "Talking";
-                Temp = Instantiate(dialogue, new Vector3(-1f, 2, 0.5f), new Quaternion(0f, 180f, 0f, 0f), CharacterList[0].transform);
+                Temp = Instantiate(dialogue, new Vector3(-1f, 2, 0.2f), new Quaternion(0f, 0f, 0f, 0f), CharacterList[0].transform);
                 Temp.tag = temptag;
                 Temp.transform.localPosition = new Vector3(-1f, 2, 0.5f);
             }

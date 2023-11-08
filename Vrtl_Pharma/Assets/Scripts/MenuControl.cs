@@ -20,4 +20,9 @@ public class MenuControl : MonoBehaviour
         Application.Quit();
     }
 
+    public void NiveauBT(int level)
+    {
+        PlayerPrefs.SetInt("Niveau", level);
+    }
+
 }

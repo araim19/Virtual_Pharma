@@ -43022,6 +43022,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7855776248394329623, guid: 12324f8e8aaf1d64eb29a8d26017bf6a, type: 3}
+      propertyPath: m_TrackingStateInput.m_Action.m_Id
+      value: 37fc1f12-b258-4642-a639-f00baada07d9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855776248394329623, guid: 12324f8e8aaf1d64eb29a8d26017bf6a, type: 3}
+      propertyPath: m_TrackingStateInput.m_Action.m_Name
+      value: Tracking State Input
+      objectReference: {fileID: 0}
     - target: {fileID: 7855776249148692656, guid: 12324f8e8aaf1d64eb29a8d26017bf6a, type: 3}
       propertyPath: m_RootOrder
       value: 0
