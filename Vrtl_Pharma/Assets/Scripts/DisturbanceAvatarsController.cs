@@ -105,6 +105,7 @@ public class DisturbanceAvatarsController : MonoBehaviour
                 Temp = Instantiate(dialogue, new Vector3(-1f, 2, 0.2f), new Quaternion(0f, 0f, 0f, 0f), CharacterList[0].transform);
                 Temp.tag = temptag;
                 Temp.transform.localPosition = new Vector3(-1f, 2, 0.5f);
+                Temp.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
             }
 
             if (CharacterList.Length > 1)
