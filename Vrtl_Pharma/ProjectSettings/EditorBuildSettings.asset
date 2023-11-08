@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/mainScene.unity
     guid: 7939f9a8adbfcb34fa42aee73b2dab73
+  - enabled: 1
+    path: Assets/Scenes/TESTVRJULES.unity
+    guid: 062018ce3f931444ca09f2f3c8b53af9
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: aa6b126f11b7ce2418d374c79ad8832b, type: 2}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 2b69fc23b9c41ea4cbdbd8a1507fdc6b, type: 2}
