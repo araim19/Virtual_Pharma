@@ -19,6 +19,7 @@ public class LoadDialoge : MonoBehaviour
     private String[] _lines;
     private bool _delayPassed = true;
     public static String _nomMedoc;
+
     void Start()
     {
         if (gameObject.tag.ToString() == "F"){
@@ -62,6 +63,10 @@ public class LoadDialoge : MonoBehaviour
             _delayPassed = false;
             StartCoroutine(enumerator());
         }
+
+
+
+
     }
 
     IEnumerator enumerator(){

@@ -130,7 +130,14 @@ public class DisturbanceAvatarsController : MonoBehaviour
             }
         }
 
-        
+
+
+        if (CheckCondition.gonext)
+        {
+            print("bon produit");
+            Completed();
+            CheckCondition.gonext = false;
+        }
     }
 
 
