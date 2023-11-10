@@ -20,6 +20,7 @@ public class CheckCondition : MonoBehaviour
         if (CheckCollider.objectname.Contains(nommedoc))
         {
             gonext = true;
+            CheckCollider.objectname = "";
         }
     }
     //Vérifier que si objet qui contient mot scénario entre dans zone collider, appeler fonction Completed()

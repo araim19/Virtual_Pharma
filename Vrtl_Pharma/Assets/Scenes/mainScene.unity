@@ -6686,6 +6686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 513d5f3210982eb4091e6e42745e436e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastone: {fileID: 1722498226}
 --- !u!65 &464350474
 BoxCollider:
   m_ObjectHideFlags: 0
