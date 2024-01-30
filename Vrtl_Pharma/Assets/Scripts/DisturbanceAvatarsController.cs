@@ -7,8 +7,8 @@ using UnityEngine.AI;
 public class DisturbanceAvatarsController : MonoBehaviour
 {
 
-    [SerializeField] private GameObject[] AvatarsF; //Liste des avatars à notre disposition
-    [SerializeField] private GameObject[] AvatarsM; //Liste des avatars à notre disposition
+    [SerializeField] private GameObject[] AvatarsF; //Liste des avatars féminins à notre disposition
+    [SerializeField] private GameObject[] AvatarsM; //Liste des avatars masculins à notre disposition
 
     [SerializeField] public GameObject[] CharacterList; //Liste des avatars qui viendront dans le magasin
 
@@ -39,14 +39,27 @@ public class DisturbanceAvatarsController : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("Disturbance_Level"))
+        if (PlayerPrefs.HasKey("Niveau"))
         {
-            Disturbance_Level = PlayerPrefs.GetInt("Disturbance_Level");//Defined in the Menu
-        }              
-        NB_Avatars = UnityEngine.Random.Range(Disturbance_Level + 1, 4 * Disturbance_Level - 2);// 2-2 ; 3-6 ; 4-10
-        print(NB_Avatars);
+            Disturbance_Level = PlayerPrefs.GetInt("Niveau");//Defined in the Menu
+            if(Disturbance_Level != 0)
+            {
+                NB_Avatars = UnityEngine.Random.Range(Disturbance_Level + 1, 4 * Disturbance_Level - 2);// 2-2 ; 3-6 ; 4-10
+                print(NB_Avatars);
+            }
+            else
+            {
+                NB_Avatars = 0;
+                caninstante = false;
+            }
 
-        Disturbance_Level = PlayerPrefs.GetInt("Niveau");
+        }
+        else
+        {
+            NB_Avatars = 1;
+            print(NB_Avatars);
+        }
+        
     }
 
     // Update is called once per frame
@@ -144,7 +157,7 @@ public class DisturbanceAvatarsController : MonoBehaviour
     IEnumerator Coroutinewait()
     {
         autorize = true;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3f);        //temps d'attente entre 2 avatars !!!
         if (incrementonly != NB_Avatars)
         {
             caninstante = true;
