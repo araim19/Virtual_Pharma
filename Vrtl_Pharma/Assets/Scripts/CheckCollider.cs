@@ -11,11 +11,13 @@ public class CheckCollider : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         objectname = other.name;
-        if (objectname.Contains(LoadDialoge._nomMedoc))
+        if (PlayerPrefs.GetInt("Niveau") > 0 && PlayerPrefs.GetInt("Niveau") < 4)
         {
-            Destroy(other.gameObject);
+            if (objectname.Contains(LoadDialoge._nomMedoc))
+            {
+                Destroy(other.gameObject);
+            }
         }
-
     }
 
 }

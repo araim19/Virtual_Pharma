@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using System.IO;
-using Palmmedia.ReportGenerator.Core.Parser.Analysis;
+//using Palmmedia.ReportGenerator.Core.Parser.Analysis;
 public class LoadDialoge : MonoBehaviour
 {
     private AudioSource _source;

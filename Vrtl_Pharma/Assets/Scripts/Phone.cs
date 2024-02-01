@@ -28,7 +28,7 @@ public class Phone : MonoBehaviour
     IEnumerator CoroutinePhone()
     {
         print("start to wait");
-        yield return new WaitForSeconds(10f);        //temps d'attente
+        yield return new WaitForSeconds(10f);        //temps d'attente pour le premier coup de tel
         source.clip = Dring;
         source.Play();
         peut_decrocher = true;
@@ -38,7 +38,7 @@ public class Phone : MonoBehaviour
 
     IEnumerator CoroutinePhone2()
     {
-        yield return new WaitForSeconds(60f);        //temps d'attente
+        yield return new WaitForSeconds(90f);        //temps d'attente entre les 2 coup de tel modifiable
         source.clip = Dring;
         source.Play();
         peut_decrocher2 = true;

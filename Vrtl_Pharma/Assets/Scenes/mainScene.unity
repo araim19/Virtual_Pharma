@@ -3035,8 +3035,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dring: {fileID: 8300000, guid: b8023cdbee3d16a44b7cd01b7c70e355, type: 3}
-  Audio1: {fileID: 8300000, guid: 4f7069fade50d674ab2f618ffcb17cd8, type: 3}
-  Audio2: {fileID: 8300000, guid: 4f7069fade50d674ab2f618ffcb17cd8, type: 3}
+  Audio1: {fileID: 8300000, guid: 3e81c9299424d9747aa0944ed7013db9, type: 3}
+  Audio2: {fileID: 8300000, guid: 6d6b5d3dbb1ee564aa4526ec9250101b, type: 3}
 --- !u!65 &208958249
 BoxCollider:
   m_ObjectHideFlags: 0
